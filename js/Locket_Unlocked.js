@@ -29,7 +29,11 @@ if (ua.includes("Locket")) {
             remove_ads: "enabled",
             video: "enabled",
             custom_widget_frames: "enabled",
-            streak_recovery: "enabled"
+            streak_recovery: "enabled",
+            ai_appearance: "enabled",
+            ai_styles: "enabled",
+            generative_ai: "enabled",
+            magic_editor: "enabled"
         }),
         upsell_features: JSON.stringify({
             app_icon_picker: true,
@@ -37,7 +41,9 @@ if (ua.includes("Locket")) {
             camera_theme: true,
             locket_views: true,
             remove_ads: true,
-            custom_widget_frames: true
+            custom_widget_frames: true,
+            ai_appearance: true,
+            generative_ai: true
         }),
         paywall_presentation_config: JSON.stringify({
             uid: "paywall_testflight",
@@ -167,10 +173,10 @@ if (ua.includes("Locket")) {
         camera_microphone_enabled: "true",
         zoom_enabled: "true",
         upload_main: "true",
-        upload_main_image_quality: "1.0",
-        upload_main_image_size: "1440",
-        upload_thumbnail_image_quality: "1.0",
-        upload_thumbnail_image_size: "1020"
+        upload_main_image_quality: "0.92",
+        upload_main_image_size: "1080",
+        upload_thumbnail_image_quality: "0.9",
+        upload_thumbnail_image_size: "720"
     });
 
     // ============================================================
