@@ -37,8 +37,7 @@ if (ua.includes("Locket")) {
             camera_theme: true,
             locket_views: true,
             remove_ads: true,
-            custom_widget_frames: true,
-            profile_badge: true
+            custom_widget_frames: true
         }),
         paywall_presentation_config: JSON.stringify({
             uid: "paywall_testflight",
@@ -68,8 +67,6 @@ if (ua.includes("Locket")) {
         }),
         android_subscribe_gold_button_enabled: "false",
         profile_badge_visible: "true",
-        profile_badge_enabled: "true",
-        profile_gold_badge_enabled: "true",
         lunar_new_year_app_icon_enabled: "true"
     });
 
