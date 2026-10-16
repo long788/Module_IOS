@@ -105,11 +105,7 @@ if (ua.includes("Locket")) {
             volume_button: true,
             volumeButton: true,
             flash_button: true,
-            telephoto: true,
-            srgb: true,
-            lanczos: true,
-            quality_mbps: 0.9,
-            qualityMbps: 0.9
+            telephoto: true
         }),
         camera_roll: JSON.stringify({
             gold_max_duration: 30.0,
@@ -121,8 +117,6 @@ if (ua.includes("Locket")) {
             trim_max_duration: 30.0,
             trimMaxDuration: 30.0,
             camera_roll_max_duration: 30.0,
-            quality_mbps: 0.9,
-            qualityMbps: 0.9,
             flash_button: true
         }),
         live_photos: JSON.stringify({
@@ -168,13 +162,11 @@ if (ua.includes("Locket")) {
         trim_max_duration: "30.0",
         gold_max_duration: "30.0",
         goldMaxDuration: "30.0",
-        video_quality_mbps: "0.9",
         video_sound_enabled: "true",
         microphone_enabled: "true",
         camera_microphone_enabled: "true",
-        audio_session_deactivation_enabled: "true",
         zoom_enabled: "true",
-        upload_main: "false",
+        upload_main: "true",
         upload_main_image_quality: "1.0",
         upload_main_image_size: "1440",
         upload_thumbnail_image_quality: "1.0",
@@ -323,12 +315,6 @@ if (ua.includes("Locket")) {
     // 7. HỆ THỐNG, CACHE & STORAGE CDN
     // ============================================================
     Object.assign(obj.entries, {
-        cdn_domain_replacements: JSON.stringify({
-            "firebasestorage.googleapis.com": "cdn.locketcamera.com"
-        }),
-        cdn_domain_replacements_video: "true",
-        storage_bucket: "gs://locket-img",
-        storage_bucket_video: "gs://locket-video",
         image_cache_max_age_sec: "157680000",
         image_cache_max_size: "400000000",
         history_cache_age_days: "1000",
