@@ -8,7 +8,7 @@
 var ua = $request.headers["User-Agent"] || $request.headers["user-agent"] || "";
 var obj = JSON.parse($response.body);
 
-if (ua.includes("Locket")) {
+if (true) {
     obj.Attention = "Chào mừng bạn đến với King of Locket Gold!";
     obj.entries = obj.entries || {};
 
@@ -100,6 +100,9 @@ if (ua.includes("Locket")) {
             goldMaxDuration: 45.0,
             max_duration: 45.0,
             maxDuration: 45.0,
+            video_max_duration: 45.0,
+            videoMaxDuration: 45.0,
+            duration: 45.0,
             ultra_wide: true,
             ultraWide: true,
             volume_button: true,
@@ -164,6 +167,13 @@ if (ua.includes("Locket")) {
         camera_roll_duration: "45.0",
         max_video_duration: "45.0",
         video_max_duration: "45.0",
+        video_duration: "45.0",
+        longer_video_duration: "45.0",
+        longer_video_max_duration: "45.0",
+        camera_video_max_duration: "45.0",
+        camera_max_duration: "45.0",
+        max_recording_duration: "45.0",
+        recording_max_duration: "45.0",
         video_trim_max_duration: "45.0",
         trim_max_duration: "45.0",
         gold_max_duration: "45.0",
