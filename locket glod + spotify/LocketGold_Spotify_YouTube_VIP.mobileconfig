@@ -5,44 +5,44 @@
     <key>PayloadDisplayName</key>
     <string>Locket Gold Vip 💛 + Spotify &amp; YouTube Premium</string>
     <key>PayloadDescription</key>
-    <string>Hồ sơ VIP tách biệt 2 tầng DNS độc lập: (1) Đóng băng Locket Gold &amp; Anti-Revoke bằng Cloudflare NeverConnect giống 100% LocketGoldVIP.mobileconfig, hoàn toàn không đi qua server ngoài; (2) Mở khóa Spotify Premium &amp; YouTube Premium (Phát nền, PiP, Chặn quảng cáo).</string>
+    <string>Hồ sơ VIP: Đóng băng bản quyền Locket Gold vĩnh viễn + Chống thu hồi chứng chỉ Apple (Anti-Revoke) ở tầng hệ điều hành iOS (tách biệt 100% khỏi server ngoài) + Mở khóa Spotify &amp; YouTube Premium (chạy nền, chặn quảng cáo). @locket_gold_vip</string>
     <key>PayloadOrganization</key>
     <string>Locket Gold Vip 💛</string>
     <key>PayloadIdentifier</key>
-    <string>com.locketgold.vip.profile</string>
+    <string>com.locketgold.spotify.youtube.vip.profile</string>
     <key>PayloadUUID</key>
     <string>21098765-4321-DCBA-0F12-4567890ABCDE</string>
     <key>PayloadVersion</key>
-    <integer>2</integer>
+    <integer>1</integer>
     <key>PayloadRemovalDisallowed</key>
     <false/>
     <key>PayloadType</key>
     <string>Configuration</string>
     <key>PayloadContent</key>
     <array>
-        <!-- ① Chứng chỉ gốc Root CA (Dành riêng cho Spotify & YouTube Premium) -->
+        <!-- ① Chứng chỉ gốc Root CA (Cần thiết cho Spotify & YouTube Premium) -->
         <dict>
             <key>PayloadType</key>
             <string>com.apple.security.root</string>
             <key>PayloadVersion</key>
             <integer>1</integer>
             <key>PayloadIdentifier</key>
-            <string>com.spotifyyoutube.rootca</string>
+            <string>com.locketgold.rootca</string>
             <key>PayloadUUID</key>
             <string>bb0640e5-040b-4ecc-9f5c-53157883582a</string>
             <key>PayloadDisplayName</key>
             <string>Locket Gold Root CA</string>
-            <key>PayloadCertificateFileName</key>
-            <string>LocketGoldRootCA.cer</string>
             <key>PayloadDescription</key>
-            <string>Chứng chỉ gốc hỗ trợ mở khóa Spotify &amp; YouTube Premium (Phát trong nền, PiP, Chặn quảng cáo)</string>
+            <string>Chứng chỉ gốc hỗ trợ mở khóa Spotify &amp; YouTube Premium</string>
             <key>PayloadContent</key>
             <data>
 MIIDejCCAmKgAwIBAgIJAPs4V/Q5JaaQMA0GCSqGSIb3DQEBCwUAMEoxCzAJBgNVBAYTAlVTMR0wGwYDVQQKDBRMb2NrZXQgR29sZCBVbmxvY2tlcjEcMBoGA1UEAwwTTG9ja2V0IEdvbGQgUm9vdCBDQTAeFw0yNjEwMTkwNjU4MDJaFw0zNjEwMTYwNjU4MDJaMEoxCzAJBgNVBAYTAlVTMR0wGwYDVQQKDBRMb2NrZXQgR29sZCBVbmxvY2tlcjEcMBoGA1UEAwwTTG9ja2V0IEdvbGQgUm9vdCBDQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKDRQdnLjyznevdF+p8czU7BiK+V3AlNV0kdijJ1guFtAWR8H4Gp/n9bYDReYgG1T1wULP/Ycin6jmEJgyHj7+Sdf+aWbdbSH9sJ88eNUSKBkQj7pM1FEzmtpn2sYYRBlpHyPq+DSN7F1SIxQjLxkcn/o2R4TBub/yAGie8t0wUiplU3ERVPdOXXxp4zyVCUgsNqlPpPbu9bWvAPj/esglBfXsoxGs+RVWSpRBIZCu1qUh/M42+pfiHMBnbtEHV2b3UPp9nrMG0jQfgILSGeBNYen1zp/kbQrn1yDExPL/JYTJrvUxLrDT2F6eTHE4mM64MrlcIWrM5VPr3jZ1gliW0CAwEAAaNjMGEwHQYDVR0OBBYEFAYsC40T2bhGa93UwuIsCKQJpuolMB8GA1UdIwQYMBaAFAYsC40T2bhGa93UwuIsCKQJpuolMA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0PAQH/BAQDAgGGMA0GCSqGSIb3DQEBCwUAA4IBAQASWfR8qZg2r0cWCQZ3BAKz05QQyU4s3mkb5VRWSDjCzwZjB6vzSZpa0uBzHK78iqDsBO5B6nYLGW/KByf9JTASLVUv5biOCiuJ8feFyLIijbmQo2ZrUFCxc9W9fl66VC5CuCTLwMxzVqLPe0TppTSHTjhIKJAtvOKyn4z8AmRKuaYZmQ4jWUH+VTp6RLmWnXe3Q0XshC/sDuBUA4TIYKq/7XlPGHWKqGE0EILXOQ8honADNhMTM8DWBrFbgqOU5b0l/xWZuilmEHnXc2yO9d1/74DTbxgSlpC6OtwOg1wQR1xN4hA1mLUu3kdnJRBTMZ0TaoEqTMWcF8QRHfLXal81
             </data>
         </dict>
 
-        <!-- ② PAYLOAD DNS 1 (ĐỘC LẬP 100%): Giữ nguyên Y HỆT LocketGoldVIP.mobileconfig của bạn (Cloudflare + NeverConnect 100%), hoàn toàn không liên quan đến server 160.191.242.70 -->
+        <!-- ② Cấu hình DNS duy nhất (1 dòng DNS trên iOS):
+             - OnDemandRules -> NeverConnect: Chặn cứng Locket Gold, Anti-Revoke Apple & Quảng cáo YouTube ngay tại tầng hệ điều hành iOS (0% đi qua server ngoài).
+             - SupplementalMatchDomains: CHỈ định tuyến đúng 10 domain Spotify và youtubei.googleapis.com qua DoH mở khóa. -->
         <dict>
             <key>PayloadType</key>
             <string>com.apple.dnsSettings.managed</string>
@@ -57,61 +57,29 @@ MIIDejCCAmKgAwIBAgIJAPs4V/Q5JaaQMA0GCSqGSIb3DQEBCwUAMEoxCzAJBgNVBAYTAlVTMR0wGwYD
             <key>PayloadOrganization</key>
             <string>Locket Gold Vip 💛</string>
             <key>PayloadDescription</key>
-            <string>Cấu hình DNS đóng băng Locket Gold VIP, chống thu hồi chứng chỉ Apple và chặn quảng cáo YouTube (Không qua server ngoài).</string>
+            <string>Cấu hình DNS đóng băng Locket Gold VIP, chống thu hồi Apple và mở khóa Spotify + YouTube Premium.</string>
             <key>DNSSettings</key>
             <dict>
                 <key>DNSProtocol</key>
                 <string>HTTPS</string>
                 <key>ServerURL</key>
-                <string>https://cloudflare-dns.com/dns-query</string>
-                <key>ServerAddresses</key>
-                <array>
-                    <string>1.1.1.1</string>
-                    <string>1.0.0.1</string>
-                    <string>2606:4700:4700::1111</string>
-                    <string>2606:4700:4700::1001</string>
-                </array>
+                <string>https://160-191-242-70.sslip.io/dns-query/2ec0e3cf7abc</string>
                 <key>SupplementalMatchDomains</key>
                 <array>
-                    <!-- Apple Anti-Revoke -->
-                    <string>certs.apple.com</string>
-                    <string>crl.apple.com</string>
-                    <string>ocsp.apple.com</string>
-                    <string>ocsp2.apple.com</string>
-                    <string>valid.apple.com</string>
-                    <string>ppq.apple.com</string>
-                    <string>appattest.apple.com</string>
-                    <string>vpp.itunes.apple.com</string>
-                    <string>crl3.digicert.com</string>
-                    <string>crl4.digicert.com</string>
-                    <string>ocsp.digicert.cn</string>
-                    <string>ocsp.digicert.com</string>
-                    
-                    <!-- Locket Gold Freeze (Đóng băng bản quyền - Giữ nguyên 100% từ LocketGoldVIP.mobileconfig) -->
-                    <string>api.revenuecat.com</string>
-                    <string>app.revenuecat.com</string>
-                    <string>revenuecat.com</string>
-                    <string>www.revenuecat.com</string>
-                    <string>in.appcenter.ms</string>
-                    <string>app-measurement.com</string>
-                    <string>firebaselogging-pa.googleapis.com</string>
-                    <string>firebaselogging.googleapis.com</string>
-                    <string>mixpanel.com</string>
-                    <string>api.mixpanel.com</string>
-                    <string>adsbynimbus.com</string>
-                    <string>locketlabs-locketcamera.adsbynimbus.com</string>
-                    <string>api2.amplitude.com</string>
-                    <string>appsflyersdk.com</string>
+                    <!-- [Spotify Premium - Chỉ định tuyến domain Spotify] -->
+                    <string>spclient.wg.spotify.com</string>
+                    <string>wg.spotify.com</string>
+                    <string>apresolve.spotify.com</string>
+                    <string>gae2-spclient.spotify.com</string>
+                    <string>guc3-spclient.spotify.com</string>
+                    <string>gue1-spclient.spotify.com</string>
+                    <string>gew1-spclient.spotify.com</string>
+                    <string>guc3.spotify.com</string>
+                    <string>gue3.spotify.com</string>
+                    <string>gua3.spotify.com</string>
 
-                    <!-- Chặn cứng tên miền quảng cáo YouTube -->
-                    <string>googleads.g.doubleclick.net</string>
-                    <string>pagead2.googlesyndication.com</string>
-                    <string>static.doubleclick.net</string>
-                    <string>ad.youtube.com</string>
-                    <string>ads.youtube.com</string>
-                    <string>s0.2mdn.net</string>
-                    <string>pubads.g.doubleclick.net</string>
-                    <string>securepubads.g.doubleclick.net</string>
+                    <!-- [YouTube Premium - Chỉ định tuyến API YouTube] -->
+                    <string>youtubei.googleapis.com</string>
                 </array>
             </dict>
             <key>OnDemandRules</key>
@@ -126,7 +94,17 @@ MIIDejCCAmKgAwIBAgIJAPs4V/Q5JaaQMA0GCSqGSIb3DQEBCwUAMEoxCzAJBgNVBAYTAlVTMR0wGwYD
                             <string>NeverConnect</string>
                             <key>Domains</key>
                             <array>
-                                <!-- Apple & DigiCert Anti-Revoke -->
+                                <!-- Chặn quảng cáo YouTube tầng hệ điều hành -->
+                                <string>googleads.g.doubleclick.net</string>
+                                <string>pagead2.googlesyndication.com</string>
+                                <string>static.doubleclick.net</string>
+                                <string>ad.youtube.com</string>
+                                <string>ads.youtube.com</string>
+                                <string>s0.2mdn.net</string>
+                                <string>pubads.g.doubleclick.net</string>
+                                <string>securepubads.g.doubleclick.net</string>
+
+                                <!-- Apple & DigiCert Anti-Revoke (Giữ nguyên 100% từ LocketGoldVIP.mobileconfig) -->
                                 <string>certs.apple.com</string>
                                 <string>crl.apple.com</string>
                                 <string>ocsp.apple.com</string>
@@ -139,8 +117,8 @@ MIIDejCCAmKgAwIBAgIJAPs4V/Q5JaaQMA0GCSqGSIb3DQEBCwUAMEoxCzAJBgNVBAYTAlVTMR0wGwYD
                                 <string>crl4.digicert.com</string>
                                 <string>ocsp.digicert.cn</string>
                                 <string>ocsp.digicert.com</string>
-                                
-                                <!-- Đóng băng bản quyền Locket Gold (Chặn cứng tầng hệ điều hành) -->
+
+                                <!-- Đóng băng bản quyền Locket Gold (Chặn cứng tầng hệ điều hành iOS - Giữ nguyên 100% từ LocketGoldVIP.mobileconfig) -->
                                 <string>api.revenuecat.com</string>
                                 <string>app.revenuecat.com</string>
                                 <string>revenuecat.com</string>
@@ -155,75 +133,10 @@ MIIDejCCAmKgAwIBAgIJAPs4V/Q5JaaQMA0GCSqGSIb3DQEBCwUAMEoxCzAJBgNVBAYTAlVTMR0wGwYD
                                 <string>locketlabs-locketcamera.adsbynimbus.com</string>
                                 <string>api2.amplitude.com</string>
                                 <string>appsflyersdk.com</string>
-
-                                <!-- Chặn cứng tên miền quảng cáo YouTube -->
-                                <string>googleads.g.doubleclick.net</string>
-                                <string>pagead2.googlesyndication.com</string>
-                                <string>static.doubleclick.net</string>
-                                <string>ad.youtube.com</string>
-                                <string>ads.youtube.com</string>
-                                <string>s0.2mdn.net</string>
-                                <string>pubads.g.doubleclick.net</string>
-                                <string>securepubads.g.doubleclick.net</string>
                             </array>
                         </dict>
                     </array>
                 </dict>
-                <dict>
-                    <key>Action</key>
-                    <string>Connect</string>
-                    <key>InterfaceTypeMatch</key>
-                    <string>WiFi</string>
-                </dict>
-                <dict>
-                    <key>Action</key>
-                    <string>Connect</string>
-                    <key>InterfaceTypeMatch</key>
-                    <string>Cellular</string>
-                </dict>
-            </array>
-        </dict>
-
-        <!-- ③ PAYLOAD DNS 2 (ĐỘC LẬP 100%): Chỉ định tuyến riêng Spotify & YouTube API (youtubei.googleapis.com), tuyệt đối không chạm vào Locket -->
-        <dict>
-            <key>PayloadType</key>
-            <string>com.apple.dnsSettings.managed</string>
-            <key>PayloadVersion</key>
-            <integer>1</integer>
-            <key>PayloadIdentifier</key>
-            <string>com.spotifyyoutube.dns</string>
-            <key>PayloadUUID</key>
-            <string>2504b094-3aad-4998-a308-a23e7db9ffa4</string>
-            <key>PayloadDisplayName</key>
-            <string>Spotify &amp; YouTube Premium DNS</string>
-            <key>PayloadDescription</key>
-            <string>DNS-over-HTTPS chỉ dành riêng cho Spotify Premium &amp; YouTube Premium (Phát trong nền, PiP, Không quảng cáo)</string>
-            <key>DNSSettings</key>
-            <dict>
-                <key>DNSProtocol</key>
-                <string>HTTPS</string>
-                <key>ServerURL</key>
-                <string>https://160-191-242-70.sslip.io/dns-query/2ec0e3cf7abc</string>
-                <key>SupplementalMatchDomains</key>
-                <array>
-                    <!-- Spotify Premium -->
-                    <string>spclient.wg.spotify.com</string>
-                    <string>wg.spotify.com</string>
-                    <string>apresolve.spotify.com</string>
-                    <string>gae2-spclient.spotify.com</string>
-                    <string>guc3-spclient.spotify.com</string>
-                    <string>gue1-spclient.spotify.com</string>
-                    <string>gew1-spclient.spotify.com</string>
-                    <string>guc3.spotify.com</string>
-                    <string>gue3.spotify.com</string>
-                    <string>gua3.spotify.com</string>
-
-                    <!-- YouTube Premium (Phát trong nền, PiP, Xóa quảng cáo trong video) -->
-                    <string>youtubei.googleapis.com</string>
-                </array>
-            </dict>
-            <key>OnDemandRules</key>
-            <array>
                 <dict>
                     <key>Action</key>
                     <string>Connect</string>
