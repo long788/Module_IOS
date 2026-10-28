@@ -10,7 +10,7 @@ var obj = JSON.parse($response.body);
 
 if (true) {
     obj.Attention = "Chào mừng bạn đến với King of Locket Gold!";
-    obj.state = "UPDATE"; obj.templateVersion = String(Math.floor(Date.now() / 1000)); obj.entries = obj.entries || {};
+    obj.state = "UPDATE"; obj.entries = obj.entries || {};
 
     // ============================================================
     // 1. CẤU HÌNH GOLD, FEATURE GATES & PAYWALL
@@ -287,8 +287,8 @@ if (true) {
         widget_last_sent_indicator: "false",
         widget_sync_token_reload_mode: "clearTokenNever",
         widget_frame_event: JSON.stringify({
-            uid: "cyber_cat_640_v2",
-            url: "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/img/custom_frame_640.png",
+            uid: "cyber_cat_640_cdn",
+            url: "https://cdn.jsdelivr.net/gh/long788/Module_IOS@main/assets/img/custom_frame_640.png",
             use_local_time_zone: true,
             placement: "below",
             start_at: "2020-01-01T00:00:00",
