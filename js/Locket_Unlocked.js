@@ -288,7 +288,7 @@ if (true) {
         widget_sync_token_reload_mode: "clearTokenNever",
         widget_frame_event: JSON.stringify({
             uid: "cyber_cat_640_2026",
-            url: "https://i.ibb.co/fV15Vz49/custom-frame-640.png",
+            url: "https://raw.githubusercontent.com/long788/Module_IOS/refs/heads/main/assets/img/custom_frame_640.png",
             use_local_time_zone: true,
             placement: "below",
             start_at: "2020-01-01T00:00:00",
