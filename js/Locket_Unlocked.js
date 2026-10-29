@@ -10,7 +10,7 @@ var obj = JSON.parse($response.body);
 
 if (true) {
     obj.Attention = "Chào mừng bạn đến với King of Locket Gold!";
-    obj.state = "UPDATE"; obj.entries = obj.entries || {};
+    obj.entries = obj.entries || {};
 
     // ============================================================
     // 1. CẤU HÌNH GOLD, FEATURE GATES & PAYWALL
@@ -277,7 +277,7 @@ if (true) {
     // 6. WIDGET, THÔNG BÁO & GIAO DIỆN (JOURNAL / PROFILE)
     // ============================================================
     Object.assign(obj.entries, {
-        widget_frame_event_max_images: "1",
+        widget_frame_event_max_images: "5",
         android_widget_frame_event_enabled: "true",
         ios_widget_frame_event_enabled: "true",
         widget_frame_event_enabled: "true",
@@ -287,8 +287,8 @@ if (true) {
         widget_last_sent_indicator: "false",
         widget_sync_token_reload_mode: "clearTokenNever",
         widget_frame_event: JSON.stringify({
-            uid: "cyber_cat_gold_2026",
-            url: "https://cdn.jsdelivr.net/gh/long788/Module_IOS@main/assets/img/custom_frame_640.png",
+            uid: "cyber_cat_640_2026",
+            url: "https://i.ibb.co/fV15Vz49/custom-frame-640.png",
             use_local_time_zone: true,
             placement: "below",
             start_at: "2020-01-01T00:00:00",
