@@ -282,7 +282,7 @@ if (true) {
     // Thứ 5: Em bé gấu nơ
     // Thứ 6: Phi hành gia hoàng gia vàng xanh
     // Thứ 7: Mèo cyber neon xanh
-    // Chủ Nhật: Tạm dùng Mèo cyber (chờ khung mới)
+    // Chủ Nhật: Robot phi hành gia cam gamer
     // ============================================================
     var dailyFrames = {
         1: { name: "mon", uid: "frame_mon_galaxy_cat", url: "https://i.ibb.co/84j69JnV/frame-mon-640.png" },
@@ -291,7 +291,7 @@ if (true) {
         4: { name: "thu", uid: "frame_thu_baby_bear", url: "https://i.ibb.co/DDnjrxYB/frame-thu-640.png" },
         5: { name: "fri", uid: "frame_fri_astro_boy", url: "https://i.ibb.co/VYmyDN1g/frame-fri-640.png" },
         6: { name: "sat", uid: "frame_sat_cyber_cat", url: "https://i.ibb.co/wFdwxy9w/frame-sat-640.png" },
-        0: { name: "sun", uid: "frame_sun_cyber_cat", url: "https://i.ibb.co/wFdwxy9w/frame-sat-640.png" }
+        0: { name: "sun", uid: "frame_sun_robot_gamer", url: "https://i.ibb.co/d4vFGDw2/frame-sun-640.png" }
     };
 
     var nowDate = new Date();
