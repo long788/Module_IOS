@@ -275,7 +275,30 @@ if (true) {
 
     // ============================================================
     // 6. WIDGET, THÔNG BÁO & GIAO DIỆN (JOURNAL / PROFILE)
+    // Tự động xoay khung viền widget theo từng ngày trong tuần:
+    // Thứ 2: Mèo phi hành gia tím
+    // Thứ 3: Rồng mecha đỏ đen
+    // Thứ 4: Thỏ trúc xanh
+    // Thứ 5: Em bé gấu nơ
+    // Thứ 6: Phi hành gia hoàng gia vàng xanh
+    // Thứ 7: Mèo cyber neon xanh
+    // Chủ Nhật: Tạm dùng Mèo cyber (chờ khung mới)
     // ============================================================
+    var dailyFrames = {
+        1: { name: "mon", uid: "frame_mon_galaxy_cat", url: "https://i.ibb.co/84j69JnV/frame-mon-640.png" },
+        2: { name: "tue", uid: "frame_tue_mecha_dragon", url: "https://i.ibb.co/fVQvW41Z/frame-tue-640.png" },
+        3: { name: "wed", uid: "frame_wed_bamboo_rabbit", url: "https://i.ibb.co/BV0hgnxy/frame-wed-640.png" },
+        4: { name: "thu", uid: "frame_thu_baby_bear", url: "https://i.ibb.co/DDnjrxYB/frame-thu-640.png" },
+        5: { name: "fri", uid: "frame_fri_astro_boy", url: "https://i.ibb.co/VYmyDN1g/frame-fri-640.png" },
+        6: { name: "sat", uid: "frame_sat_cyber_cat", url: "https://i.ibb.co/wFdwxy9w/frame-sat-640.png" },
+        0: { name: "sun", uid: "frame_sun_cyber_cat", url: "https://i.ibb.co/wFdwxy9w/frame-sat-640.png" }
+    };
+
+    var nowDate = new Date();
+    var currentDay = nowDate.getDay(); // 0 = CN, 1 = T2, ..., 6 = T7
+    var todayFrame = dailyFrames[currentDay] || dailyFrames[1];
+    var dayUid = todayFrame.uid + "_" + nowDate.getFullYear() + "_" + (nowDate.getMonth() + 1) + "_" + nowDate.getDate();
+
     Object.assign(obj.entries, {
         widget_frame_event_max_images: "5",
         android_widget_frame_event_enabled: "true",
@@ -287,8 +310,8 @@ if (true) {
         widget_last_sent_indicator: "false",
         widget_sync_token_reload_mode: "clearTokenNever",
         widget_frame_event: JSON.stringify({
-            uid: "cyber_cat_640_2026",
-            url: "https://i.ibb.co/fV15Vz49/custom-frame-640.png",
+            uid: dayUid,
+            url: todayFrame.url,
             use_local_time_zone: true,
             placement: "below",
             start_at: "2020-01-01T00:00:00",
