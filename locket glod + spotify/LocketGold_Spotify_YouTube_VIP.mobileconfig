@@ -118,13 +118,11 @@ MIIDejCCAmKgAwIBAgIJAPs4V/Q5JaaQMA0GCSqGSIb3DQEBCwUAMEoxCzAJBgNVBAYTAlVTMR0wGwYD
                                 <string>ocsp.digicert.cn</string>
                                 <string>ocsp.digicert.com</string>
 
-                                <!-- Đóng băng bản quyền Locket Gold & Khung Widget (Chặn cứng tầng hệ điều hành iOS - Giữ nguyên 100% từ LocketGoldVIP.mobileconfig) -->
+                                <!-- Đóng băng bản quyền Locket Gold (Chặn cứng tầng hệ điều hành iOS - Giữ nguyên 100% từ LocketGoldVIP.mobileconfig) -->
                                 <string>api.revenuecat.com</string>
                                 <string>app.revenuecat.com</string>
                                 <string>revenuecat.com</string>
                                 <string>www.revenuecat.com</string>
-                                <string>firebaseremoteconfig.googleapis.com</string>
-                                <string>firebaseremoteconfigrealtime.googleapis.com</string>
                                 <string>in.appcenter.ms</string>
                                 <string>app-measurement.com</string>
                                 <string>firebaselogging-pa.googleapis.com</string>
