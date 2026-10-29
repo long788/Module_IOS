@@ -277,7 +277,7 @@ if (true) {
     // 6. WIDGET, THÔNG BÁO & GIAO DIỆN (JOURNAL / PROFILE)
     // ============================================================
     Object.assign(obj.entries, {
-        widget_frame_event_max_images: "5",
+        widget_frame_event_max_images: "1",
         android_widget_frame_event_enabled: "true",
         ios_widget_frame_event_enabled: "true",
         widget_frame_event_enabled: "true",
@@ -287,8 +287,8 @@ if (true) {
         widget_last_sent_indicator: "false",
         widget_sync_token_reload_mode: "clearTokenNever",
         widget_frame_event: JSON.stringify({
-            uid: "cyber_cat_640_v3",
-            url: "https://raw.githubusercontent.com/long788/Module_IOS/main/assets/img/custom_frame_640.png",
+            uid: "cyber_cat_gold_2026",
+            url: "https://cdn.jsdelivr.net/gh/long788/Module_IOS@main/assets/img/custom_frame_640.png",
             use_local_time_zone: true,
             placement: "below",
             start_at: "2020-01-01T00:00:00",
