@@ -1,8 +1,23 @@
 /***********************************************
-> deleteHeader by duyvinh09
+> deleteHeader & Anti-Cache 304 by minhhiep08
 ***********************************************/	
 
-const version = 'V1.0.2';
+const version = 'V2.0.0';
 
+const headersToStrip = [
+  'x-revenuecat-etag',
+  'if-none-match',
+  'if-modified-since',
+  'x-goog-if-none-match'
+];
 
-function setHeaderValue(e,a,d){var r=a.toLowerCase();r in e?e[r]=d:e[a]=d}var modifiedHeaders=$request.headers;setHeaderValue(modifiedHeaders,"X-RevenueCat-ETag",""),$done({headers:modifiedHeaders});
+let modifiedHeaders = (typeof $request !== "undefined" && $request && $request.headers) ? Object.assign({}, $request.headers) : {};
+
+for (let key of Object.keys(modifiedHeaders)) {
+  if (headersToStrip.includes(key.toLowerCase())) {
+    modifiedHeaders[key] = "";
+    delete modifiedHeaders[key];
+  }
+}
+
+$done({ headers: modifiedHeaders });

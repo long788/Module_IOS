@@ -5,13 +5,13 @@
     <key>PayloadDisplayName</key>
     <string>Spotify VIP &amp; YouTube Premium</string>
     <key>PayloadDescription</key>
-    <string>Cấu hình mở khóa Spotify Eevee VIP (bỏ ép trộn bài, nghe nhạc chọn bài tự do, gỡ quảng cáo) &amp; YouTube Premium (chặn quảng cáo, phát nhạc trong nền, PiP).</string>
+    <string>Cấu hình mở khóa Spotify Eevee VIP (bỏ ép trộn bài, nghe nhạc chọn bài tự do, gỡ quảng cáo) &amp; YouTube Premium (chặn quảng cáo, phát nhạc trong nền, PiP). Độc lập 100%, đã loại bỏ hoàn toàn phần Locket cũ.</string>
     <key>PayloadOrganization</key>
     <string>Spotify &amp; YouTube VIP</string>
     <key>PayloadIdentifier</key>
     <string>com.spotify.youtube.vip.profile</string>
     <key>PayloadUUID</key>
-    <string>9ddc879a-abb8-4bdb-9984-c53a273581e8</string>
+    <string>9DDC879A-ABB8-4BDB-9984-C53A273581E8</string>
     <key>PayloadVersion</key>
     <integer>1</integer>
     <key>PayloadRemovalDisallowed</key>
@@ -20,32 +20,96 @@
     <string>Configuration</string>
     <key>PayloadContent</key>
     <array>
-        <!-- ① Chứng chỉ gốc Root CA (Hỗ trợ giải mã HTTPS cho Spotify VIP & YouTube Premium) -->
+        <!-- ① Chứng chỉ gốc Spotify MITM CA & DoH Gateway CA (Mới nhất, độc lập 100%, không chứa Locket) -->
         <dict>
             <key>PayloadType</key>
             <string>com.apple.security.root</string>
+            <key>PayloadIdentifier</key>
+            <string>com.spotifymitm.ca</string>
+            <key>PayloadUUID</key>
+            <string>B2C3D4E5-F6A7-8901-BCDE-F12345678901</string>
             <key>PayloadVersion</key>
             <integer>1</integer>
-            <key>PayloadIdentifier</key>
-            <string>com.spotifyyoutube.rootca</string>
-            <key>PayloadUUID</key>
-            <string>bb0640e5-040b-4ecc-9f5c-53157883582a</string>
             <key>PayloadDisplayName</key>
-            <string>Spotify &amp; YouTube Root CA</string>
+            <string>Spotify MITM CA</string>
             <key>PayloadDescription</key>
-            <string>Chứng chỉ gốc hỗ trợ mở khóa Spotify VIP &amp; YouTube Premium</string>
+            <string>Chứng chỉ gốc mở khóa Spotify Eevee VIP &amp; DoH Gateway</string>
+            <key>PayloadCertificateFileName</key>
+            <string>SpotifyProxyCA.der</string>
             <key>PayloadContent</key>
             <data>
-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
+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
+Xa6BmIbiwRWzRqVCWfMGUTY=
             </data>
         </dict>
 
-        <!-- ② Cấu hình DNS (Chỉ định tuyến riêng Spotify & YouTube Premium, đã bỏ hoàn toàn Locket) -->
+        <!-- ② Chứng chỉ gốc YouTube MITM Root CA (Mở khóa YouTube Premium, PiP, Background Play) -->
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.security.root</string>
+            <key>PayloadIdentifier</key>
+            <string>com.youtubemitm.ca</string>
+            <key>PayloadUUID</key>
+            <string>55142178-E363-4410-9A19-4FF6A34B5C64</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadDisplayName</key>
+            <string>YouTube MITM Root CA</string>
+            <key>PayloadDescription</key>
+            <string>Chứng chỉ gốc mở khóa YouTube Premium (Chặn quảng cáo, PiP, Phát trong nền)</string>
+            <key>PayloadCertificateFileName</key>
+            <string>YouTube_MITM_CA.crt</string>
+            <key>PayloadContent</key>
+            <data>
+MIIEJjCCAw6gAwIBAgITU7I4M8OoUM3qVNYEn2vbQe7jkDANBgkqhkiG9w0BAQsF
+ADCBmjELMAkGA1UEBhMCVk4xFDASBgNVBAgMC0hvIENoaSBNaW5oMRQwEgYDVQQH
+DAtIbyBDaGkgTWluaDEdMBsGA1UECgwUWW91VHViZSBNSVRNIE5ldHdvcmsxITAf
+BgNVBAsMGFlvdVR1YmUgU2VjdXJpdHkgUm9vdCBDQTEdMBsGA1UEAwwUWW91VHVi
+ZSBNSVRNIFJvb3QgQ0EwHhcNMjYxMDI1MTU1MDQyWhcNMzYxMDIyMTU1MDQyWjCB
+mjELMAkGA1UEBhMCVk4xFDASBgNVBAgMC0hvIENoaSBNaW5oMRQwEgYDVQQHDAtI
+byBDaGkgTWluaDEdMBsGA1UECgwUWW91VHViZSBNSVRNIE5ldHdvcmsxITAfBgNV
+BAsMGFlvdVR1YmUgU2VjdXJpdHkgUm9vdCBDQTEdMBsGA1UEAwwUWW91VHViZSBN
+SVRNIFJvb3QgQ0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDBhs1Y
+qA0NpbPhzeJkcSM+F9fUxUZ0xaJ9Tng8IHnetWc8LXeFsSWHx8VLvAa0qVL3YYbf
+CUhKn8HYytsipIe0KRV2l7epvBLTPV/lUAcUsayYuJ+bY3V4ei++yYeq1ev4q7X/
+ITvOQol30qs4/J5ECtq6OU95cmF2iT7anC0xPg2/SF2biUXyJLvn86NuMvObrC7E
+PPL9MymkToeWFHkic2opwKb/wSYdv2KiuhaR1/9zmoBokQjCC2vq7xLbrpn+80IM
+uVj1NXYmktT4z7Gg8NaLw8+wSYDlww8Hi/t9KZcQ9aPJflx9l2yx8jO7bzQ+lmx7
+R18OWCkJS6p/hAtDAgMBAAGjYzBhMB0GA1UdDgQWBBQq5upiQlLAlp0sbu5DYu76
+6Km+eTAfBgNVHSMEGDAWgBQq5upiQlLAlp0sbu5DYu766Km+eTAPBgNVHRMBAf8E
+BTADAQH/MA4GA1UdDwEB/wQEAwIBhjANBgkqhkiG9w0BAQsFAAOCAQEAKHlmeXOX
+9u1uGqsfDs7Jwg8dwPlEwtKGZRCIDsM/PX5QX6O8Zt6Mj9yBRthEZagGlyB3Zggr
+1Y2hUHm9pApK9DlX/uO/k6Q4udF4h6KvbPxKhXSoxfPd0hsIyj4VTAuTcz3TjRqZ
+sY0JENbG6ByKj06siPWVNZU40BVEomXwonDkDbmEosi21jlx5Dt10dyV0xakK9y5
+GSgpsbknCIhXyivF/7bcej/qBL62AGbxSRy8SXTP8TSAtwYJnZPqJr6vSunt7wex
+ME0wM8B5r2q0h7CW2shkMXXHgbvCXQ8AJ7ARkobBg7ShJoFLxIwX3aiBAOPziqmd
+vFBfOULqaBB8Lw==
+            </data>
+        </dict>
+
+        <!-- ③ Cấu hình DNS over HTTPS (Chỉ định tuyến Spotify VIP & YouTube Premium, đã bỏ hoàn toàn Locket) -->
         <dict>
             <key>PayloadType</key>
             <string>com.apple.dnsSettings.managed</string>
             <key>PayloadIdentifier</key>
-            <string>com.apple.dnsSettings.managed.spotifyyoutube.vip</string>
+            <string>com.spotify.youtube.vip.dns</string>
             <key>PayloadUUID</key>
             <string>C3D4E5F6-7890-1234-5678-90ABCDEF1234</string>
             <key>PayloadVersion</key>
@@ -61,7 +125,11 @@ MIIDejCCAmKgAwIBAgIJAPs4V/Q5JaaQMA0GCSqGSIb3DQEBCwUAMEoxCzAJBgNVBAYTAlVTMR0wGwYD
                 <key>DNSProtocol</key>
                 <string>HTTPS</string>
                 <key>ServerURL</key>
-                <string>https://160-191-242-70.sslip.io/dns-query/2ec0e3cf7abc</string>
+                <string>https://103.101.161.228/dns-query</string>
+                <key>ServerAddresses</key>
+                <array>
+                    <string>103.101.161.228</string>
+                </array>
                 <key>SupplementalMatchDomains</key>
                 <array>
                     <!-- [Spotify Rules - iPad Mode & Eevee VIP (bootstrap / customize / artistview / album)] -->
@@ -76,8 +144,12 @@ MIIDejCCAmKgAwIBAgIJAPs4V/Q5JaaQMA0GCSqGSIb3DQEBCwUAMEoxCzAJBgNVBAYTAlVTMR0wGwYD
                     <string>gue3.spotify.com</string>
                     <string>gua3.spotify.com</string>
 
-                    <!-- [YouTube Premium - API browse / next / player / search / reel / get_watch] -->
+                    <!-- [YouTube Premium - API browse / next / player / search / reel / get_watch / initplayback] -->
                     <string>youtubei.googleapis.com</string>
+                    <string>s.youtube.com</string>
+                    <string>www.youtube.com</string>
+                    <string>youtube.com</string>
+                    <string>googlevideo.com</string>
                 </array>
             </dict>
             <key>OnDemandRules</key>
@@ -92,7 +164,9 @@ MIIDejCCAmKgAwIBAgIJAPs4V/Q5JaaQMA0GCSqGSIb3DQEBCwUAMEoxCzAJBgNVBAYTAlVTMR0wGwYD
                             <string>NeverConnect</string>
                             <key>Domains</key>
                             <array>
-                                <!-- Chặn quảng cáo YouTube & Tracking Sentry theo đúng sgmodule -->
+                                <!-- Chặn quảng cáo YouTube & Tracking Sentry theo đúng Locket_YouTube.sgmodule -->
+                                <string>sentry.io</string>
+                                <string>ingest.sentry.io</string>
                                 <string>googleads.g.doubleclick.net</string>
                                 <string>pagead2.googlesyndication.com</string>
                                 <string>static.doubleclick.net</string>
@@ -101,8 +175,6 @@ MIIDejCCAmKgAwIBAgIJAPs4V/Q5JaaQMA0GCSqGSIb3DQEBCwUAMEoxCzAJBgNVBAYTAlVTMR0wGwYD
                                 <string>s0.2mdn.net</string>
                                 <string>pubads.g.doubleclick.net</string>
                                 <string>securepubads.g.doubleclick.net</string>
-                                <string>sentry.io</string>
-                                <string>ingest.sentry.io</string>
                             </array>
                         </dict>
                     </array>
