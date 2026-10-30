@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
     <key>PayloadDisplayName</key>
-    <string>Spotify VIP &amp; YouTube Premium</string>
+    <string>Spotify VIP &amp; YouTube Premium DNS</string>
     <key>PayloadDescription</key>
-    <string>Cấu hình mở khóa Spotify Eevee VIP (bỏ ép trộn bài, nghe nhạc chọn bài tự do, gỡ quảng cáo) &amp; YouTube Premium (chặn quảng cáo, phát nhạc trong nền, PiP). Độc lập 100%, đã loại bỏ hoàn toàn phần Locket cũ.</string>
+    <string>Cấu hình DNS thuần mở khóa Spotify Eevee VIP và YouTube Premium (chặn quảng cáo, phát nhạc trong nền, PiP). Không cài chứng chỉ CA, không đụng tới Locket.</string>
     <key>PayloadOrganization</key>
     <string>Spotify &amp; YouTube VIP</string>
     <key>PayloadIdentifier</key>
@@ -20,91 +20,7 @@
     <string>Configuration</string>
     <key>PayloadContent</key>
     <array>
-        <!-- ① Chứng chỉ gốc Spotify MITM CA & DoH Gateway CA (Mới nhất, độc lập 100%, không chứa Locket) -->
-        <dict>
-            <key>PayloadType</key>
-            <string>com.apple.security.root</string>
-            <key>PayloadIdentifier</key>
-            <string>com.spotifymitm.ca</string>
-            <key>PayloadUUID</key>
-            <string>B2C3D4E5-F6A7-8901-BCDE-F12345678901</string>
-            <key>PayloadVersion</key>
-            <integer>1</integer>
-            <key>PayloadDisplayName</key>
-            <string>Spotify MITM CA</string>
-            <key>PayloadDescription</key>
-            <string>Chứng chỉ gốc mở khóa Spotify Eevee VIP &amp; DoH Gateway</string>
-            <key>PayloadCertificateFileName</key>
-            <string>SpotifyProxyCA.der</string>
-            <key>PayloadContent</key>
-            <data>
-MIIDbTCCAlWgAwIBAgIUVXOC0XgvlH9vBW+WgL0yBGjHY4MwDQYJKoZIhvcNAQEL
-BQAwRjELMAkGA1UEBhMCVk4xHTAbBgNVBAoMFFNwb3RpZnkgTUlUTSBOZXR3b3Jr
-MRgwFgYDVQQDDA9TcG90aWZ5IE1JVE0gQ0EwHhcNMjYxMDI3MTYwMzQ1WhcNMzYx
-MDI0MTYwMzQ1WjBGMQswCQYDVQQGEwJWTjEdMBsGA1UECgwUU3BvdGlmeSBNSVRN
-IE5ldHdvcmsxGDAWBgNVBAMMD1Nwb3RpZnkgTUlUTSBDQTCCASIwDQYJKoZIhvcN
-AQEBBQADggEPADCCAQoCggEBAJJyuLJ3ZfGEYZPkQdvemduPGQizqlYYyquvXXbf
-b0cwNdZLCe7vqRRpEKC4jd8h+KMNg6yQhguWacRF889EWblxDwVFKRKSIawy1ek1
-FfYppXMk4j0zY62JoC8ie5cCInsHwtiHaJMNI0hQPRS8eWGMZV2Gn5z3ltVMDaHn
-+EhcwR8P/9tcwXrthbxpLJyIV8bQ67tPItawO1M9XdTKVvx8elxwmDYNVBhHgTX+
-KIEaT2Yz/zF0E0ez5kOuBlI4zqh3WOvekEgY4OWdi3E9HwKRsYVTNU+GQTt7F4Qc
-rqYGmMekO9Rj95O1AcV010IHYnved7zArhLPVKylwkc0x70CAwEAAaNTMFEwHQYD
-VR0OBBYEFN8+XrmR+TVi8bVrNnF3URWPoDt5MB8GA1UdIwQYMBaAFN8+XrmR+TVi
-8bVrNnF3URWPoDt5MA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEB
-AFFeMiPEnFSqQZ/s4TTW4DgXCZDZVIfkvr+OhLyhDOeoDqbM9NMRtcw8k3wI54vJ
-sBzEx22c7fCCog6H+W0rjbdCHOGJm0YujaT26Pw+METl8ecK1Q70tXILHcWLzoJD
-4cWlVHcx3XbIOdbV2MMy87lNSa0Ahdcun4O3PKf3YxuaGk5i18/Wpxs6H225LYQH
-V2UP99ThGfoKshjAkRcBo50URODRtqbe7yTEeRyTxdIGCfOId9OBY3eRCVdSX57Z
-AvE1bLrzFj/vjGK16j4/Lsvdrdgfrw69RSvxXaw5W6fI913dGCBtdCWwq8NzgW8q
-Xa6BmIbiwRWzRqVCWfMGUTY=
-            </data>
-        </dict>
-
-        <!-- ② Chứng chỉ gốc YouTube MITM Root CA (Mở khóa YouTube Premium, PiP, Background Play) -->
-        <dict>
-            <key>PayloadType</key>
-            <string>com.apple.security.root</string>
-            <key>PayloadIdentifier</key>
-            <string>com.youtubemitm.ca</string>
-            <key>PayloadUUID</key>
-            <string>55142178-E363-4410-9A19-4FF6A34B5C64</string>
-            <key>PayloadVersion</key>
-            <integer>1</integer>
-            <key>PayloadDisplayName</key>
-            <string>YouTube MITM Root CA</string>
-            <key>PayloadDescription</key>
-            <string>Chứng chỉ gốc mở khóa YouTube Premium (Chặn quảng cáo, PiP, Phát trong nền)</string>
-            <key>PayloadCertificateFileName</key>
-            <string>YouTube_MITM_CA.crt</string>
-            <key>PayloadContent</key>
-            <data>
-MIIEJjCCAw6gAwIBAgITU7I4M8OoUM3qVNYEn2vbQe7jkDANBgkqhkiG9w0BAQsF
-ADCBmjELMAkGA1UEBhMCVk4xFDASBgNVBAgMC0hvIENoaSBNaW5oMRQwEgYDVQQH
-DAtIbyBDaGkgTWluaDEdMBsGA1UECgwUWW91VHViZSBNSVRNIE5ldHdvcmsxITAf
-BgNVBAsMGFlvdVR1YmUgU2VjdXJpdHkgUm9vdCBDQTEdMBsGA1UEAwwUWW91VHVi
-ZSBNSVRNIFJvb3QgQ0EwHhcNMjYxMDI1MTU1MDQyWhcNMzYxMDIyMTU1MDQyWjCB
-mjELMAkGA1UEBhMCVk4xFDASBgNVBAgMC0hvIENoaSBNaW5oMRQwEgYDVQQHDAtI
-byBDaGkgTWluaDEdMBsGA1UECgwUWW91VHViZSBNSVRNIE5ldHdvcmsxITAfBgNV
-BAsMGFlvdVR1YmUgU2VjdXJpdHkgUm9vdCBDQTEdMBsGA1UEAwwUWW91VHViZSBN
-SVRNIFJvb3QgQ0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDBhs1Y
-qA0NpbPhzeJkcSM+F9fUxUZ0xaJ9Tng8IHnetWc8LXeFsSWHx8VLvAa0qVL3YYbf
-CUhKn8HYytsipIe0KRV2l7epvBLTPV/lUAcUsayYuJ+bY3V4ei++yYeq1ev4q7X/
-ITvOQol30qs4/J5ECtq6OU95cmF2iT7anC0xPg2/SF2biUXyJLvn86NuMvObrC7E
-PPL9MymkToeWFHkic2opwKb/wSYdv2KiuhaR1/9zmoBokQjCC2vq7xLbrpn+80IM
-uVj1NXYmktT4z7Gg8NaLw8+wSYDlww8Hi/t9KZcQ9aPJflx9l2yx8jO7bzQ+lmx7
-R18OWCkJS6p/hAtDAgMBAAGjYzBhMB0GA1UdDgQWBBQq5upiQlLAlp0sbu5DYu76
-6Km+eTAfBgNVHSMEGDAWgBQq5upiQlLAlp0sbu5DYu766Km+eTAPBgNVHRMBAf8E
-BTADAQH/MA4GA1UdDwEB/wQEAwIBhjANBgkqhkiG9w0BAQsFAAOCAQEAKHlmeXOX
-9u1uGqsfDs7Jwg8dwPlEwtKGZRCIDsM/PX5QX6O8Zt6Mj9yBRthEZagGlyB3Zggr
-1Y2hUHm9pApK9DlX/uO/k6Q4udF4h6KvbPxKhXSoxfPd0hsIyj4VTAuTcz3TjRqZ
-sY0JENbG6ByKj06siPWVNZU40BVEomXwonDkDbmEosi21jlx5Dt10dyV0xakK9y5
-GSgpsbknCIhXyivF/7bcej/qBL62AGbxSRy8SXTP8TSAtwYJnZPqJr6vSunt7wex
-ME0wM8B5r2q0h7CW2shkMXXHgbvCXQ8AJ7ARkobBg7ShJoFLxIwX3aiBAOPziqmd
-vFBfOULqaBB8Lw==
-            </data>
-        </dict>
-
-        <!-- ③ Cấu hình DNS over HTTPS (Chỉ định tuyến Spotify VIP & YouTube Premium, đã bỏ hoàn toàn Locket) -->
+        <!-- Cấu hình DNS duy nhất (Không cần chứng chỉ Root CA, không cần cấp quyền tin cậy) -->
         <dict>
             <key>PayloadType</key>
             <string>com.apple.dnsSettings.managed</string>
@@ -119,7 +35,7 @@ vFBfOULqaBB8Lw==
             <key>PayloadOrganization</key>
             <string>Spotify &amp; YouTube VIP</string>
             <key>PayloadDescription</key>
-            <string>Cấu hình DNS mở khóa Spotify Eevee VIP và YouTube Premium (chạy nền, PiP, chặn quảng cáo).</string>
+            <string>Cấu hình DNS mở khóa Spotify Eevee VIP và YouTube Premium.</string>
             <key>DNSSettings</key>
             <dict>
                 <key>DNSProtocol</key>
@@ -132,7 +48,7 @@ vFBfOULqaBB8Lw==
                 </array>
                 <key>SupplementalMatchDomains</key>
                 <array>
-                    <!-- [Spotify Rules - iPad Mode & Eevee VIP (bootstrap / customize / artistview / album)] -->
+                    <!-- [Spotify Rules - iPad Mode & Eevee VIP] -->
                     <string>spclient.wg.spotify.com</string>
                     <string>wg.spotify.com</string>
                     <string>apresolve.spotify.com</string>
@@ -144,7 +60,7 @@ vFBfOULqaBB8Lw==
                     <string>gue3.spotify.com</string>
                     <string>gua3.spotify.com</string>
 
-                    <!-- [YouTube Premium - API browse / next / player / search / reel / get_watch / initplayback] -->
+                    <!-- [YouTube Premium - Chặn quảng cáo, chạy nền, PiP] -->
                     <string>youtubei.googleapis.com</string>
                     <string>s.youtube.com</string>
                     <string>www.youtube.com</string>
@@ -164,7 +80,7 @@ vFBfOULqaBB8Lw==
                             <string>NeverConnect</string>
                             <key>Domains</key>
                             <array>
-                                <!-- Chặn quảng cáo YouTube & Tracking Sentry theo đúng Locket_YouTube.sgmodule -->
+                                <!-- Chặn quảng cáo YouTube & Tracking Sentry -->
                                 <string>sentry.io</string>
                                 <string>ingest.sentry.io</string>
                                 <string>googleads.g.doubleclick.net</string>
