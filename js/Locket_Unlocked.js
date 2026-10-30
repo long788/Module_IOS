@@ -10,6 +10,7 @@ var obj = JSON.parse($response.body);
 
 if (true) {
     obj.Attention = "Chào mừng bạn đến với King of Locket Gold!";
+    obj.state = "UPDATE";
     obj.entries = obj.entries || {};
 
     // ============================================================
@@ -294,10 +295,12 @@ if (true) {
         0: { name: "sun", uid: "frame_sun_robot_gamer", url: "https://i.ibb.co/d4vFGDw2/frame-sun-640.png" }
     };
 
-    var nowDate = new Date();
-    var currentDay = nowDate.getDay(); // 0 = CN, 1 = T2, ..., 6 = T7
+    // Tính chuẩn múi giờ Việt Nam (UTC+7) kể cả trong tiến trình VPN ngầm của iOS
+    var nowUtc = new Date();
+    var vnTime = new Date(nowUtc.getTime() + (7 * 60 * 60 * 1000));
+    var currentDay = vnTime.getUTCDay(); // 0 = CN, 1 = T2, ..., 6 = T7
     var todayFrame = dailyFrames[currentDay] || dailyFrames[1];
-    var dayUid = todayFrame.uid + "_" + nowDate.getFullYear() + "_" + (nowDate.getMonth() + 1) + "_" + nowDate.getDate();
+    var dayUid = todayFrame.uid + "_" + vnTime.getUTCFullYear() + "_" + (vnTime.getUTCMonth() + 1) + "_" + vnTime.getUTCDate();
 
     Object.assign(obj.entries, {
         widget_frame_event_max_images: "5",
